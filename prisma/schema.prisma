@@ -1,0 +1,52 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model CollectionAnime {
+  id                Int @id @default(autoincrement())
+  anime_mal_id      String
+  user_email        String
+  anime_image       String
+  anime_title       String
+
+  @@unique([user_email, anime_mal_id])
+}
+
+model CollectionManga {
+  id                Int @id @default(autoincrement())
+  manga_mal_id      String
+  user_email        String
+  manga_image       String
+  manga_title       String
+
+  @@unique([user_email, manga_mal_id])
+}
+
+model CommentAnime {
+  id              Int @id @default(autoincrement())
+  user_email      String
+  anime_mal_id    String
+  comment         String
+  username        String
+  anime_title     String
+}
+
+model CommentManga {
+  id              Int @id @default(autoincrement())
+  user_email      String
+  manga_mal_id    String
+  comment         String
+  username        String
+  manga_title     String
+}
