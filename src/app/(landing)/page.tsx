@@ -7,13 +7,13 @@ import AnimeList from './components/AnimeList'
 import OpenCloseNav from '../components/ui/Navbar/OpenCloseNav'
 import { HeroParallax } from '@/components/ui/hero-parallax'
 import { getFetchData } from '@/lib/getFetchData'
-import { AnimeData } from '../types/api'
+import { AnimeData, MangaData } from '../types/api'
 
 const Landing = async () => {
   const user = await authUserSession()
   const { data } = await getFetchData('top/anime')
 
-  const products = data.map((anime: AnimeData) => ({
+  const products = data.map((anime: AnimeData | MangaData) => ({
     title: anime.title,
     link: `/anime/${anime.mal_id}`,
     thumbnail: anime.images.jpg.large_image_url,

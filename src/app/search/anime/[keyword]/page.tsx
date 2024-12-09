@@ -6,12 +6,13 @@ import { AnimeData } from '@/app/types/api'
 import { MangaData } from '@/app/types/api'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     keyword: string
-  }
+  }>
 }
 
-const Page: React.FC<PageProps> = async ({ params: { keyword } }) => {
+const Page: React.FC<PageProps> = async ({ params }) => {
+  const { keyword } = await params
   const { data } = await getFetchData('anime', keyword)
 
   return (
