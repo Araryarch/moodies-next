@@ -106,6 +106,7 @@ const Manga = async ({ params }: MangaProps) => {
         <h1 className="text-xl pt-10">Comments:</h1>
         {user && (
           <CommentManga
+            user_image={user.image}
             manga_mal_id={id}
             user_email={user.email}
             username={user.name}

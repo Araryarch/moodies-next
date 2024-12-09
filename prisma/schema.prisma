@@ -40,6 +40,7 @@ model CommentAnime {
   comment         String
   username        String
   anime_title     String
+  user_image      String
 }
 
 model CommentManga {
@@ -49,4 +50,5 @@ model CommentManga {
   comment         String
   username        String
   manga_title     String
+  user_image      String
 }

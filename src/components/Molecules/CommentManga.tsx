@@ -11,6 +11,7 @@ interface CommentMangaProps {
   user_email: string | null | undefined
   username: string | null | undefined
   manga_title: string | null | undefined
+  user_image: string | null | undefined
 }
 
 const CommentManga = ({
@@ -18,6 +19,7 @@ const CommentManga = ({
   user_email,
   username,
   manga_title,
+  user_image,
 }: CommentMangaProps) => {
   const [comment, setComment] = useState('')
 
@@ -42,7 +44,14 @@ const CommentManga = ({
       return
     }
 
-    const data = { manga_mal_id, user_email, comment, username, manga_title }
+    const data = {
+      manga_mal_id,
+      user_email,
+      comment,
+      username,
+      manga_title,
+      user_image,
+    }
 
     try {
       const response = await fetch(`/api/v1/commentManga`, {

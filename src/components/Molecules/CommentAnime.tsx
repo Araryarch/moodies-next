@@ -11,6 +11,7 @@ interface CommentAnimeProps {
   user_email: string | null | undefined
   username: string | null | undefined
   anime_title: string | null | undefined
+  user_image: string | null | undefined
 }
 
 const CommentAnime = ({
@@ -18,6 +19,7 @@ const CommentAnime = ({
   user_email,
   username,
   anime_title,
+  user_image,
 }: CommentAnimeProps) => {
   const [comment, setComment] = useState('')
 
@@ -42,7 +44,14 @@ const CommentAnime = ({
       return
     }
 
-    const data = { anime_mal_id, user_email, comment, username, anime_title }
+    const data = {
+      anime_mal_id,
+      user_email,
+      comment,
+      username,
+      anime_title,
+      user_image,
+    }
 
     try {
       const response = await fetch(`/api/v1/commentAnime`, {

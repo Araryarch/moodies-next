@@ -117,6 +117,7 @@ const Anime = async ({ params }: AnimeProps) => {
             user_email={user.email}
             username={user.name}
             anime_title={animes.title}
+            user_image={user.image}
           />
         )}
         <CommentAnimeBox anime_mal_id={id} />
