@@ -8,6 +8,8 @@ import OpenCloseNav from '../components/ui/Navbar/OpenCloseNav'
 import { HeroParallax } from '@/components/ui/hero-parallax'
 import { getFetchData } from '@/lib/getFetchData'
 import { AnimeData, MangaData } from '../types/api'
+import { FeaturesSection } from '@/components/ui/features-section'
+import { HeroHighlightSection } from './components/HeroHighlight'
 
 const Landing = async () => {
   const user = await authUserSession()
@@ -68,8 +70,17 @@ const Landing = async () => {
             </div>
           </div>
         </div>
-        <div className="min-h-screen w-full">
+        <div className="min-h-screen w-full dark:bg-black bg-white">
           <HeroParallax products={products} />
+        </div>
+        <div className="min-h-screen w-full pt-20">
+          <h1 className="text-center text-4xl uppercase font-medium">
+            Why Choose Moodies ?
+          </h1>
+          <FeaturesSection />
+        </div>
+        <div className="min-h-screen w-full">
+          <HeroHighlightSection />
         </div>
       </div>
     </main>
