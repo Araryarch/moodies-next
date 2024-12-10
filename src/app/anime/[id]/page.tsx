@@ -7,31 +7,12 @@ import prisma from '@/lib/prisma'
 import VideoPlayer from '../components/VideoPlayer'
 import { Genre } from '../../types/api'
 import Image from 'next/image'
+import { AnimeData } from '../../types/api'
 
 interface AnimeProps {
   params: Promise<{
     id: string
   }>
-}
-
-interface AnimeData {
-  title: string
-  images: {
-    jpg: {
-      large_image_url: string
-    }
-  }
-  genres: Genre[]
-  synopsis: string
-  episodes: number
-  duration: string
-  status: string
-  rank: number
-  rating: string
-  score: number
-  trailer: {
-    youtube_id: string
-  }
 }
 
 const Anime = async ({ params }: AnimeProps) => {

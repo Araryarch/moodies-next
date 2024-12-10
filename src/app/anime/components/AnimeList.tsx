@@ -67,16 +67,19 @@ const AnimeList = () => {
 
       switch (lastKeyword) {
         case 'senang':
-          matchedGenreId = 1 //! Misal genre 'Action'
+          matchedGenreId = 4 // Comedy
           break
         case 'sedih':
-          matchedGenreId = 2 //! Misal genre 'Drama'
+          matchedGenreId = 8 // Drama
           break
-        case 'ceria':
-          matchedGenreId = 3 //! Misal genre 'Comedy'
+        case 'marah':
+          matchedGenreId = 1 // Action
           break
-        case 'seru':
-          matchedGenreId = 4 //! Misal genre 'Adventure'
+        case 'baik':
+          matchedGenreId = 10 // Fantasy
+          break
+        case 'depresi':
+          matchedGenreId = 40 // Psychological
           break
         default:
           break

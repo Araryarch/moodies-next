@@ -6,28 +6,12 @@ import { getFetchData } from '@/lib/getFetchData'
 import prisma from '@/lib/prisma'
 import { Genre } from '../../types/api'
 import Image from 'next/image'
+import { MangaData } from '../../types/api'
 
 interface MangaProps {
   params: Promise<{
     id: string
   }>
-}
-
-interface MangaData {
-  title: string
-  images: {
-    jpg: {
-      large_image_url: string
-    }
-  }
-  genres: Genre[]
-  synopsis: string
-  episodes: number
-  duration: string
-  status: string
-  rank: number
-  rating: string
-  score: number
 }
 
 const Manga = async ({ params }: MangaProps) => {
@@ -84,10 +68,10 @@ const Manga = async ({ params }: MangaProps) => {
         <h1 className="text-2xl">Detail Information :</h1>
         <div className="flex gap-2 py-2">
           <p className="px-2 py-1 bg-background shadow-md rounded">
-            Episodes : {mangas.episodes}
+            Episodes : {mangas.chapters}
           </p>
           <p className="px-2 py-1 bg-background shadow-md rounded">
-            Duration : {mangas.duration}
+            Volumes : {mangas.volumes}
           </p>
           <p className="px-2 py-1 bg-background shadow-md rounded">
             Status : {mangas.status}
@@ -96,7 +80,7 @@ const Manga = async ({ params }: MangaProps) => {
             Rank : {mangas.rank}
           </p>
           <p className="px-2 py-1 bg-background shadow-md rounded">
-            Rating : {mangas.rating}
+            Popularity : {mangas.popularity}
           </p>
           <p className="px-2 py-1 bg-background shadow-md rounded">
             Score : {mangas.score}
