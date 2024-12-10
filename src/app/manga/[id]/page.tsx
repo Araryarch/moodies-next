@@ -68,7 +68,7 @@ const Manga = async ({ params }: MangaProps) => {
         <h1 className="text-2xl">Detail Information :</h1>
         <div className="flex gap-2 py-2">
           <p className="px-2 py-1 bg-background shadow-md rounded">
-            Episodes : {mangas.chapters}
+            Chapters : {mangas.chapters}
           </p>
           <p className="px-2 py-1 bg-background shadow-md rounded">
             Volumes : {mangas.volumes}
