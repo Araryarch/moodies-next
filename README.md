@@ -1,74 +1,92 @@
-# next-chatbot-kit
+# Moodies
 
-`next-chatbot-kit` is a starter template for building chatbots using **Next.js 15** and **Bun.js**. This template provides a simple and flexible foundation for creating conversational AI applications with support for integrating third-party services, state management, and scalable chatbot components.
+Moodies adalah template chatbot modern berbasis **Next.js 15** yang dirancang untuk memberikan pengalaman interaksi yang cepat dan responsif. Dengan dukungan teknologi terkini, Moodies cocok untuk membangun chatbot atau aplikasi interaktif lainnya.
 
-## Features
+## Tech Stack
 
-- **Next.js 15** - Built with the latest features of Next.js.
-- **Bun.js** - Uses Bun as the JavaScript runtime for faster builds and executions.
-- **Customizable UI** - Easy to modify the chatbot UI according to your design requirements.
-- **State Management** - Efficient state management for chatbot responses.
-- **API Integration** - Seamlessly integrates with AI models or any custom backend for generating responses.
-- **TypeScript Support** - Fully typed with TypeScript to ensure better code quality and IntelliSense.
-- **Responsive Design** - Works well on all screen sizes with a mobile-first approach.
+Moodies dibangun menggunakan teknologi berikut:
 
-## Pre-requisite
+- **[Next.js 15.0.4](https://nextjs.org/)**: Framework React dengan fitur Server Components dan App Router.
+- **[ShadCN UI](https://ui.shadcn.dev/)**: Komponen UI elegan yang dapat disesuaikan.
+- **[Framer Motion](https://www.framer.com/motion/)**: Animasi tingkat lanjut untuk pengalaman pengguna yang halus.
+- **[Bun.js](https://bun.sh/)**: Runtime JavaScript yang cepat.
+- **[Prisma ORM](https://www.prisma.io/)**: ORM modern untuk pengelolaan database yang efisien.
+- **[Supabase](https://supabase.com/)**: Backend-as-a-Service untuk autentikasi, database, dan lainnya.
 
-- Install Node.js LTS version and Bun.js
+## Fitur Utama
 
-- **Windows Powershell**
-  ```bash
-  powershell -c "irm bun.sh/install.ps1 | iex"
-  ```
-- **Linux or MacOS**
-  ```bash
-  curl -fsSL https://bun.sh/install | bash
-  ```
+- **Integrasi Komponen UI**: Komponen yang disesuaikan untuk kebutuhan chatbot modern.
+- **Animasi Interaktif**: Transisi dan animasi yang hidup berkat Framer Motion.
+- **Performa Cepat**: Didukung oleh Bun.js dan Next.js untuk performa optimal.
+- **Database Modern**: Menggunakan Prisma ORM dengan backend Supabase.
+- **Pengembangan Fleksibel**: Mudah diperluas dan disesuaikan dengan kebutuhan.
 
-## Installation
+## Prasyarat
 
-To get started with `next-chatbot-kit`, follow these steps:
+Pastikan Anda telah menginstal:
 
-1. Install deps and make a folder :
+- **Node.js** (dengan Bun.js sebagai runtime)
+- **Bun.js**: [Panduan Instalasi](https://bun.sh/)
+- **Database**: Pastikan Anda memiliki Supabase atau database lain yang dikonfigurasi.
 
-   ```bash
-   npx create-next-chatbot-kit <projects-name>
-   ```
+## Instalasi
 
-2. change your directory:
+1. Clone repositori:
 
    ```bash
-   cd <projects-name>
+   git clone https://github.com/Araryarch/moodies-next.git
+   cd moodies-next
    ```
 
-3. Add a `.env` File
+2. Instal dependensi menggunakan Bun.js:
 
-- You can create a `.env` file manually or by running the following command in your project directory:
+   ```bash
+   bun install
+   ```
 
-  ```bash
-  touch .env
-  ```
+3. Konfigurasi environment:
+   Buat file `.env` di root proyek Anda dan tambahkan variabel berikut:
 
-- Next, add the following content to your `.env` file:
+   ```
+   DATABASE_URL=your_supabase_database_url
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-  ```env
-  GROQ_API_KEY=YOUR_API_KEY_HERE
-  ```
+4. Migrasi database:
 
-Replace `YOUR_API_KEY_HERE` with your actual GROQ API key, which you can obtain from the [GROQ Console](https://console.groq.com/keys).
+   ```bash
+   npx prisma migrate dev
+   ```
 
-4. Run the development server:
+5. Jalankan aplikasi:
 
    ```bash
    bun dev
    ```
 
-5. Open your browser and visit `http://localhost:3000` to see the chatbot in action.
+6. Akses aplikasi di `http://localhost:3000`.
 
-## Usage
+## Struktur Proyek
 
-You can easily customize the template by editing the following:
+```plaintext
+moodies-next/
+├── prisma/         # Skema database
+├── public/         # File statis
+├── src/
+│   ├── app/        # Routing berbasis App Router Next.js
+│   ├── components/ # Komponen UI
+│   ├── lib/        # Helper dan utilitas
+│   ├── styles/     # Gaya global
+│   └── types/      # Tipe TypeScript
+├── .env            # Variabel lingkungan
+└── ...
+```
 
-- **Components**: Modify the `Chatbot` component to fit your desired UI and functionality.
-- **API Routes**: Customize the backend logic in the `pages/api` folder to suit your needs, whether it’s an AI-powered bot or a rule-based chatbot.
-- **State Management**: The state management is already set up using React context; you can extend it as required for your app.
+## Kontribusi
+
+Kontribusi sangat diterima! Silakan buka issue atau buat pull request jika Anda memiliki ide atau perbaikan.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah lisensi **MIT**. Lihat [LICENSE](./LICENSE) untuk informasi lebih lanjut.
