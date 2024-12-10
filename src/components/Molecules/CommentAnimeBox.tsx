@@ -25,8 +25,8 @@ const CommentAnimeBox = async ({ anime_mal_id }: commentProps) => {
             <Image
               src={comment.user_image}
               alt={comment.username}
-              width={100}
-              height={100}
+              width={30}
+              height={30}
               className="rounded-full"
             />
             <div className="flex flex-col">
