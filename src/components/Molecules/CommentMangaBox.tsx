@@ -31,7 +31,7 @@ const CommentMangaBox = async ({ manga_mal_id }: commentProps) => {
             />
             <div className="flex flex-col">
               <p className="text-xs">{comment.username}</p>
-              <h1 className="text-xl">{comment.comment}</h1>
+              <h1 className="text-[1.1rem]">{comment.comment}</h1>
             </div>
           </div>
         )
